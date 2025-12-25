@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>FlashPrompt Manager</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <span class="logo-icon">⚡️</span>
+            <h2 class="app-title">FlashPrompt</h2>
+        </header>
+
+        <div class="toolbar">
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" placeholder="搜索...">
+            </div>
+            <button id="tagManagerBtn" class="icon-btn secondary-btn" title="标签管理">
+                🏷️ 标签
+            </button>
+            <button id="addBtn" class="primary-btn">
+                + 新建
+            </button>
+        </div>
+
+        <ul id="promptList"></ul>
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-wrapper">
+            <div class="modal-header">
+                <h3>编辑提示词</h3>
+                <span id="closeModalBtn" class="close-icon">&times;</span>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="editId">
+                <div class="form-group">
+                    <label>标题 (关键词)</label>
+                    <input type="text" id="promptTitle" placeholder="例如: fix">
+                </div>
+                <div class="form-group">
+                    <label>标签 (分类)</label>
+                    <input type="text" id="promptTags" placeholder="例如: 编程, 写作">
+                </div>
+                <div class="form-group">
+                    <label>内容</label>
+                    <textarea id="promptContent" placeholder="内容..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="saveBtn" class="primary-btn full-width">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tagManagerModal" class="modal hidden">
+        <div class="modal-wrapper">
+            <div class="modal-header">
+                <h3>🏷️ 标签管理</h3>
+                <span id="closeTagManagerBtn" class="close-icon">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="tag-stats">共 <span id="totalTagCount">0</span> 个标签</div>
+                <ul id="tagListManager">
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tagEditModal" class="modal hidden" style="z-index: 200;">
+        <div class="modal-wrapper small-modal">
+            <div class="modal-header">
+                <h3>重命名标签</h3>
+                <span id="closeTagEditBtn" class="close-icon">&times;</span>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="oldTagName">
+                <div class="form-group">
+                    <input type="text" id="newTagNameInput">
+                </div>
+                <p class="warning-text">⚠️ 修改将同步更新所有相关提示词。</p>
+            </div>
+            <div class="modal-footer">
+                <button id="saveTagBtn" class="primary-btn full-width">确认修改</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

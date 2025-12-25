@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "FlashPrompt - AI效率助手",
+  "version": "1.0",
+  "description": "无登录、本地存储的AI提示词快捷指令工具",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "管理提示词"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "open_search": {
+      "suggested_key": {
+        "default": "Alt+S",
+        "mac": "Alt+S"
+      },
+      "description": "快捷搜索提示词"
+    }
+  }
+}
