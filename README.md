@@ -73,7 +73,7 @@
 
 ### 💡 如何安装？
 
-1. 下载本项目代码或从 https://github.com/Spark-chenlin/FlashPrompt/releases/tag/v1.0.0 下载打包好的文件，然后解压缩。
+1. 下载并解压[FlashPrompt.zip](https://www.google.com/search?q=LICENSE)
 2. 打开 Chrome/Edge 扩展程序页面 (`chrome://extensions/`)。
 3. 开启“开发者模式”。
-4. 点击“加载解压的扩展程序”，选择本项目文件夹即可。
+4. 点击“加载解压的扩展程序”，选择解压后的文件夹即可。
